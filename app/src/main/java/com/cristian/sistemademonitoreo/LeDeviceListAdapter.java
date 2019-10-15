@@ -53,5 +53,11 @@ public class LeDeviceListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public boolean contains (BluetoothDevice device){
+
+        return mDevices.contains(device);
+
+    }
+
 
 }

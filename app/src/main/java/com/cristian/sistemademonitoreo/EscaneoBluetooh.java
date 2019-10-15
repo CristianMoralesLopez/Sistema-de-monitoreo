@@ -1,21 +1,35 @@
 package com.cristian.sistemademonitoreo;
 
+import android.Manifest;
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.List;
 
+import static android.widget.Toast.LENGTH_LONG;
+import static android.widget.Toast.makeText;
+
 public class EscaneoBluetooh extends AppCompatActivity {
 
-    private static final long SCAN_PERIOD = 10000;
+
+    /* VARIABLE PARA ESTABLECER EL TIEMPO DE ESCANEO DE DISPOSITIVOS*/
+
+    private static final long SCAN_PERIOD = 1000;
+
+    private static final int PERMISSION_REQUEST_COARSE_LOCATION = 456;
 
 
     private ListView listView;
@@ -37,9 +51,31 @@ public class EscaneoBluetooh extends AppCompatActivity {
                 (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         bluetoothAdapter = bluetoothManager.getAdapter();
 
-        scanLeDevice(false);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
+        }
 
-        Toast.makeText(this,""+ listView.getAdapter().getCount(),Toast.LENGTH_LONG).show();
+        scanLeDevice(true);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                BluetoothDevice device = (BluetoothDevice) leDeviceListAdapter.getItem(i);
+
+                BluetoothGatt  dev= device.connectGatt(getApplicationContext(), true, new BluetoothGattCallback() {
+                    @Override
+                    public void onPhyUpdate(BluetoothGatt gatt, int txPhy, int rxPhy, int status) {
+                        super.onPhyUpdate(gatt, txPhy, rxPhy, status);
+                    }
+                });
+
+
+            }
+        });
+
+
+
 
     }
 
@@ -72,8 +108,16 @@ public class EscaneoBluetooh extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            leDeviceListAdapter.addDevice(device);
-                            leDeviceListAdapter.notifyDataSetChanged();
+
+                            if(!leDeviceListAdapter.contains(device) && device.getName()!=null) {
+
+
+                                leDeviceListAdapter.addDevice(device);
+                                leDeviceListAdapter.notifyDataSetChanged();
+                                System.out.println(leDeviceListAdapter.getCount());
+                                System.out.println(device.getAddress());
+
+                            }
                         }
                     });
                 }
