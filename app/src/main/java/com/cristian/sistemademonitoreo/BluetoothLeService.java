@@ -16,6 +16,7 @@ import java.util.UUID;
 
 // A service that interacts with the BLE device via the Android BLE API.
 public class BluetoothLeService extends Service {
+
     private final static String TAG = BluetoothLeService.class.getSimpleName();
 
     private BluetoothManager bluetoothManager;
