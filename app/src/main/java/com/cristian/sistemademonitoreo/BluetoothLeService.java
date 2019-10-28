@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+/*package com.cristian.sistemademonitoreo;
 
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
@@ -39,8 +39,8 @@ public class BluetoothLeService extends Service {
     public final static String EXTRA_DATA =
             "com.example.bluetooth.le.EXTRA_DATA";
 
-    public final static UUID UUID_HEART_RATE_MEASUREMENT =
-            UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
+    //public final static UUID UUID_HEART_RATE_MEASUREMENT =
+         //   UUID.fromString(SampleGattAttributes.HEART_RATE_MEASUREMENT);
 
     // Various callback methods defined by the BLE API.
     private final BluetoothGattCallback gattCallback =
@@ -99,7 +99,7 @@ public class BluetoothLeService extends Service {
 
         // This is special handling for the Heart Rate Measurement profile. Data
         // parsing is carried out as per profile specifications.
-        if (UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
+        if (true//UUID_HEART_RATE_MEASUREMENT.equals(characteristic.getUuid())) {
             int flag = characteristic.getProperties();
             int format = -1;
             if ((flag & 0x01) != 0) {
@@ -132,4 +132,4 @@ public class BluetoothLeService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-}
+}*/
