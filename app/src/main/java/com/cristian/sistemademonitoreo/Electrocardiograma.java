@@ -2,12 +2,18 @@ package com.cristian.sistemademonitoreo;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -22,27 +28,34 @@ public class Electrocardiograma extends AppCompatActivity {
     private TextView txtValores;
     private Button btnIniciarElectro;
     private Button btnDetenerElectro;
+    private Button btnFirebase;
     private ArrayList<String> valoresElectro;
     private Boolean banderaElectro;
     private DatagramSocket datagramSocket;
     private Context me;
+    private FirebaseDatabase firebaseDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electrocardiograma);
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
         txtValores = findViewById(R.id.valores);
         me = this;
 
         btnIniciarElectro = findViewById(R.id.btnIniciarElectro);
         btnDetenerElectro = findViewById(R.id.btnDetenerElectro);
+        btnFirebase = findViewById(R.id.btnBsse);
         btnDetenerElectro.setEnabled(false);
         banderaElectro = true;
         valoresElectro = new ArrayList<>();
+
         try {
             datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.1.101"));
-        } catch (SocketException e) {
+       } catch (SocketException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
             e.printStackTrace();
@@ -55,6 +68,7 @@ public class Electrocardiograma extends AppCompatActivity {
                 banderaElectro = true;
                 btnIniciarElectro.setEnabled(false);
                 btnDetenerElectro.setEnabled(true);
+                btnFirebase.setEnabled(false);
                 SimpleTask task = new SimpleTask();
                 task.execute();
                 task.cancel();
@@ -68,7 +82,19 @@ public class Electrocardiograma extends AppCompatActivity {
                 banderaElectro= false;
                 btnIniciarElectro.setEnabled(true);
                 btnDetenerElectro.setEnabled(false);
+                btnFirebase.setEnabled(true);
 
+
+            }
+        });
+
+
+        btnFirebase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+                databaseReference.child("Cristian").child("valores2").setValue(valoresElectro);
 
             }
         });
@@ -91,7 +117,7 @@ public class Electrocardiograma extends AppCompatActivity {
 
 
                 while (banderaElectro){
-                    byte[] bufer = new byte[10];
+                    byte[] bufer = new byte[4];
 
 
                 // Construimos el DatagramPacket para recibir peticiones

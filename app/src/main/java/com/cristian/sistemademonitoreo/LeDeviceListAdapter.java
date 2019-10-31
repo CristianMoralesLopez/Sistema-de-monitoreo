@@ -2,7 +2,6 @@ package com.cristian.sistemademonitoreo;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
-import android.support.constraint.solver.ArrayLinkedVariables;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
