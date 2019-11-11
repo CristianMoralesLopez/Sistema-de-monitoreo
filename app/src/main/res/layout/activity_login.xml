@@ -1,16 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/grandient_vertical_backgroud">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/landingLogo"
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_toLeftOf="@id/view_aux"
+        android:rotation="180"
+        android:src="@drawable/footer_1" />
+
+    <View
+        android:id="@+id/view_aux"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/text_size_ant" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/size_xxl"
-        android:layout_marginRight="@dimen/size_xxl"
-        android:layout_marginTop="@dimen/size_xxl"
-        android:src="@drawable/logo_title" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo_title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_large"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/login_large"
+            android:textColor="@color/blue_strong"
+            android:textSize="@dimen/text_size_large" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="@dimen/body_max"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_marginTop="@dimen/size_l"
+            android:hint="@string/email"
+            android:nextFocusDown="@id/password"
+            android:textColor="@color/blue_strong"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="@dimen/body_max"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:hint="@string/password"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="textPassword"
+            android:textColor="@color/blue_strong"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <TextView
+            android:id="@+id/passwordLost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_size_ant"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/passwordLost"
+            android:textColor="@color/blue_strong"
+            android:textSize="@dimen/text_size_medium" />
+
+        <Button
+            android:id="@+id/actionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size_l"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:background="@drawable/rounded_circle_blue"
+            android:elevation="15dp"
+            android:paddingHorizontal="@dimen/body_petit"
+            android:paddingVertical="@dimen/text_size_medium"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="@dimen/text_size_medium" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/footer_1" />
 
 </RelativeLayout>

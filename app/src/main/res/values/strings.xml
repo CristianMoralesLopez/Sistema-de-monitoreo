@@ -1,18 +1,21 @@
 <resources>
-    <string name="app_name">Amamantapp</string>
+    <string name="app_name">Medical</string>
 
     <!-- Login -->
     <string name="login">Ingresar</string>
-    <string name="password">contraseña</string>
+    <string name="login_large">Iniciar sesión</string>
+    <string name="password">Contraseña</string>
     <string name="passwordTitle">Contraseña</string>
+    <string name="passwordLost">Has olvidado tu contraseñada</string>
     <string name="confirm_password">Confirmar contraseña</string>
     <string name="sing_fb">Ingresa con tu cuenta de Facebook</string>
     <string name="name_of_user">Nombre del usuario</string>
     <string name="name_and_lastname">Nombre y Apellido</string>
     <string name="email">Correo electrónico</string>
     <string name="create_password">Crear contraseña</string>
-    <string name="facebook_app_id">567651956910708</string>
-    <string name="fb_login_protocol_scheme">fb567651956910708</string>
+
+    <!-- Home -->
+    <string name="deviceLost">No se ha sincronizado ningun dispositivo</string>
 
     <!-- Store -->
     <string name="faq">PREGUNTAS FRECUENTES</string>

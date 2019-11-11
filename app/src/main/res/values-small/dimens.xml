@@ -30,6 +30,7 @@
     <dimen name="body_bigger">82dp</dimen>
     <dimen name="body_huge">92dp</dimen>
     <dimen name="body_very_huge">100dp</dimen>
+    <dimen name="body_xhuge">110dp</dimen>
     <dimen name ="body_max">120dp</dimen>
 
     <!-- Circular bodies -->
