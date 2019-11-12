@@ -11,55 +11,15 @@
     <string name="sing_fb">Ingresa con tu cuenta de Facebook</string>
     <string name="name_of_user">Nombre del usuario</string>
     <string name="name_and_lastname">Nombre y Apellido</string>
-    <string name="email">Correo electrónico</string>
+    <string name="email">Correo electrónico:</string>
     <string name="create_password">Crear contraseña</string>
 
     <!-- Home -->
     <string name="deviceLost">No se ha sincronizado ningun dispositivo</string>
 
-    <!-- Store -->
-    <string name="faq">PREGUNTAS FRECUENTES</string>
-    <string name="cart">CARRITO DE COMPRAS</string>
-    <string name="store">TIENDA DE LACTANCIA</string>
-    <string name="search">Buscar</string>
-    <string name="add_to_cart">      Añadir al carrito</string>
-    <string name="add_now">Añadir</string>
-    <string name="pay">Pagar</string>
-    <string name="remove_from_shopping_cart">Quitar del carrito</string>
-    <string name="price">Precio</string>
-    <string name="quantity">Cantidad</string>
 
     <string name="continue_text">Continuar</string>
 
-    <!-- Advisory types -->
-    <string name="advisory_now">Inmediata</string>
-    <string name="immediate_advice">ASESORÍA INMEDIATA</string>
-    <string name="advisory_scheduled">ASESORIA PROGRAMADA</string>
-    <string name="searching_advisory1">Estamos buscando la mejor Asesora </string>
-    <string name="searching_advisory2">disponible para atender tu solicitud.</string>
-    <string name="waiting_few_moment">Danos un momento por favor</string>
-    <string name="home_advisory">ASESORÍA EN CASA</string>
-    <string name="advisory_title">ASESORÍA ESPECIALIZADA EN LACTANCIA MATERNA</string>
-    <string name="advisory_in_home_bold"><b>EN CASA</b></string>
-    <string name="advisory_on_line"><b>EN LINEA</b></string>
-    <string name="home_advisory_description">Servicio personalizado de visita domiciliaria con una Asesora Certificada experta en Lactancia Materna que resolverá tus dudas y te brindará las herramientas necesarias para lograr una lactancia exitosa.</string>
-    <string name="line_advisory_description">Servicio personalizado de mensajería instantánea con una Asesora Certificada experta en Lactancia Materna que resolverá tus dudas y te brindará las herramientas necesarias para lograr una lactancia exitosa.</string>
-    <string name="request_advisory">Pide tu Asesoría</string>
-
-    <!--advisory-->
-    <string name="start_consulting">Iniciar asesoría</string>
-    <string name="finish_consulting">Finalizar asesoría</string>
-    <string name="request_consulting">Solicitud de asesoría</string>
-    <string name="confirm_advisory_dialog_1">¿Confirmas que deseas iniciar esta</string>
-    <string name="confirm_advisory_dialog_2"> asesoría ahora?</string>
-    <string name="start_now">Iniciar ahora</string>
-    <string name="cancel">Cancelar</string>
-    <string name="decline">Rechazar</string>
-    <string name="accepted">Aceptar</string>
-    <string name="confirm_exit_advisory_dialog_1">¿Confirmas que deseas finalizar esta</string>
-    <string name="confirm_cancel_advisory_dialog">¿Confirmas que deseas cancelar esta</string>
-    <string name="confirm_exit_advisory_dialog_2">asesoría ahora? Si lo haces, no podrás</string>
-    <string name="confirm_exit_advisory_dialog_3">reiniciarla ni continuarla</string>
 
 
     <!-- Home advisory -->
@@ -71,6 +31,7 @@
     <string name="add_schedule">Programar siguiente Asesoría</string>
     <string name="subject_to_availability">* Sujeto a disponibilidad</string>
     <string name="add_address">Agregar Dirección</string>
+
     <string name="add_payment_method">Agregar Método de Pago</string>
     <string name="adviser_result">Para atender tu Asesoría En Casa</string>
     <string name="adviser_result1">hemos ubicado a:</string>
@@ -83,6 +44,9 @@
     <string name="my_account">MI CUENTA</string>
     <string name="personal_information">INFORMACIÓN PERSONAL</string>
     <string name="your_name">Tu nombre:</string>
+    <string name="state">Departamento:</string>
+    <string name="city">Ciudad:</string>
+
     <string name="marital_state">Estado civil:</string>
     <string name="son">Hijo/a</string>
     <string name="old">Edad:</string>
