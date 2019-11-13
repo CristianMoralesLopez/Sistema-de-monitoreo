@@ -3,18 +3,14 @@ package com.cristian.sistemademonitoreo;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import org.achartengine.GraphicalView;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -25,11 +21,12 @@ import java.util.ArrayList;
 
 public class Electrocardiograma extends AppCompatActivity {
 
-    private TextView txtValores;
+    private static GraphicalView view;
+    private LineGraph line = new LineGraph();
     private Button btnIniciarElectro;
     private Button btnDetenerElectro;
     private Button btnFirebase;
-    private ArrayList<String> valoresElectro;
+    private ArrayList<Double> valoresElectro;
     private Boolean banderaElectro;
     private DatagramSocket datagramSocket;
     private Context me;
@@ -41,9 +38,14 @@ public class Electrocardiograma extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electrocardiograma);
 
+
+        LinearLayout linearLayout = findViewById(R.id.graficaECG);
+        view = line.getView(this);
+        linearLayout.addView(view);
+
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        txtValores = findViewById(R.id.valores);
+
         me = this;
 
         btnIniciarElectro = findViewById(R.id.btnIniciarElectro);
@@ -54,7 +56,7 @@ public class Electrocardiograma extends AppCompatActivity {
         valoresElectro = new ArrayList<>();
 
         try {
-            datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.1.101"));
+            datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.0.100"));
        } catch (SocketException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
@@ -113,10 +115,10 @@ public class Electrocardiograma extends AppCompatActivity {
 
             try {
 
-
-
-
+                double valores=0;
                 while (banderaElectro){
+
+
                     byte[] bufer = new byte[4];
 
 
@@ -129,21 +131,38 @@ public class Electrocardiograma extends AppCompatActivity {
 
                 String valor = new String(peticion.getData());
 
-                System.out.println(valor);
 
-                acumulado += valor + "\n";
 
-                valoresElectro.add(valor);
-                final String acum = acumulado;
+                valor = valor.replaceAll("\\u0000", "");
 
-                    ((AppCompatActivity)me).runOnUiThread(new Runnable() {
+
+
+                double y = Integer.parseInt(valor);
+                    valoresElectro.add(y);
+
+                System.out.println(valor + "-"+ valores + "," + y );
+
+
+
+                line.addCoordenada(valores,y);
+
+                view.repaint();
+
+
+
+
+
+
+                /*    ((AppCompatActivity)me).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        txtValores.setText(acum);
+
                     }
-                });
+                });*/
 
                 //
+
+                    valores++;
             }
 
 
@@ -159,6 +178,19 @@ public class Electrocardiograma extends AppCompatActivity {
             banderaElectro=true;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 

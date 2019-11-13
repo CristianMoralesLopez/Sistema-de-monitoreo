@@ -6,38 +6,40 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <ScrollView
-        android:id="@+id/ScrollView01"
-        android:layout_width="wrap_content"
-        android:layout_height="150dip"
-        android:layout_gravity="center">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:orientation="vertical"
+    android:id="@+id/graficaECG"></LinearLayout>
 
-        <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"        >
+
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/valores"
-            android:hint="Valores"/>
+            android:id="@+id/btnIniciarElectro"
+            android:text="iniciar ECG"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            ></Button>
 
-    </ScrollView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDetenerElectro"
+            android:text="Detener ECG"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            ></Button>
+    </LinearLayout>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnIniciarElectro"
-        android:text="iniciar Toma de datos"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        ></Button>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnDetenerElectro"
-        android:text="Detener Toma de datos"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        ></Button>
 
     <Button
         android:layout_width="wrap_content"
