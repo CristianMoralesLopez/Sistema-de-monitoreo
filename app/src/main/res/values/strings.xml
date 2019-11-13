@@ -1,3 +1,89 @@
 <resources>
-    <string name="app_name">Sistema de Monitoreo</string>
+    <string name="app_name">Medical</string>
+
+    <!-- Login -->
+    <string name="login">Ingresar</string>
+    <string name="login_large">Iniciar sesión</string>
+    <string name="password">Contraseña</string>
+    <string name="passwordTitle">Contraseña</string>
+    <string name="passwordLost">Has olvidado tu contraseñada</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="sing_fb">Ingresa con tu cuenta de Facebook</string>
+    <string name="name_of_user">Nombre del usuario</string>
+    <string name="name_and_lastname">Nombre y Apellido</string>
+    <string name="email">Correo electrónico:</string>
+    <string name="create_password">Crear contraseña</string>
+
+    <!-- Home -->
+    <string name="deviceLost">No se ha sincronizado ningun dispositivo</string>
+
+
+    <string name="continue_text">Continuar</string>
+
+
+
+    <!-- Home advisory -->
+    <string name="reason_for_consultation">Motivo de consulta</string>
+    <string name="hour">Hora</string>
+    <string name="optional">(opcional)</string>
+    <string name="schedule">Programar</string>
+    <string name="adviser_preference">Preferencia de asesora</string>
+    <string name="add_schedule">Programar siguiente Asesoría</string>
+    <string name="subject_to_availability">* Sujeto a disponibilidad</string>
+    <string name="add_address">Agregar Dirección</string>
+
+    <string name="add_payment_method">Agregar Método de Pago</string>
+    <string name="adviser_result">Para atender tu Asesoría En Casa</string>
+    <string name="adviser_result1">hemos ubicado a:</string>
+    <string name="date">Fecha</string>
+    <string name="important_alert">Aviso importante</string>
+    <string name="search_adviser">Buscar Asesora</string>
+    <string name="dont_show_again_this_message">No volver a mostrar este mensaje</string>
+
+    <!-- User -->
+    <string name="my_account">MI CUENTA</string>
+    <string name="personal_information">INFORMACIÓN PERSONAL</string>
+    <string name="your_name">Tu nombre:</string>
+    <string name="state">Departamento:</string>
+    <string name="city">Ciudad:</string>
+
+    <string name="marital_state">Estado civil:</string>
+    <string name="son">Hijo/a</string>
+    <string name="old">Edad:</string>
+    <string name="addSon">Agregar hijo/a</string>
+    <string name="name">Nombre:</string>
+    <string name="contact_information">INFORMACIÓN DEL CONTACTO</string>
+    <string name="email_contact">Correo:</string>
+    <string name="nameChild">Hijo/a </string>
+    <string name="cellphone">Celular:</string>
+    <string name="adress">Dirección:</string>
+    <string name="add"><b>Agregar</b></string>
+    <string name="remove"><b>Quitar</b></string>
+    <string name="save">Guardar</string>
+    <string name="alertMessageHome">La Asesoría En Casa inicia desde que la Asesora llega a tu hogar. Una vez culminada la sesión, el sistema te da la posibilidad extenderla una hora más por un valor de $84.000 COP.</string>
+    <string name="alertMessageOnline">La Asesoría en Línea inicia desde que la Asesora se conecta contigo y te da el primer saludo. Una vez culminada la sesión, el sistema te da la posibilidad de extenderla una hora más por un valor de $63.000 COP.</string>
+    <string name="test_result_advisory_home">Tu Asesoría Casa con Paola Cruz ha</string>
+    <string name="test_result_advisory_home1">sido programada exitosamente para</string>
+    <string name="test_date_advisory_home2">El 11 de septiembre, a las 11:00am</string>
+    <string name="sample_string">Si por algún motivo en el futuro deseas
+reprogramar tu Asesoría En Casa, debes
+hacerlo mínimo con 8 horas de
+anticipación, ingresando a MI AGENDA
+Máximo 2 reprogramaciones por Asesoría.
+    </string>
+
+    <!-- Diary -->
+    <string name="diary">AGENDA</string>
+
+    <!-- Payment -->
+    <string name="payment_methods">MÉTODO DE PAGO</string>
+
+    <!-- Other -->
+    <string name="lorem_ipsum_large">El colecho o cama familiar es una práctica en la que bebés o niños pequeños duermen con uno o los dos progenitores.</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>

@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#F1A8AE</color>
+    <color name="colorPrimaryDark">#EB8ABA</color>
+    <color name="colorAccent">#80E0C5</color>
+
+    <!-- Classic colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="almost_white">#FAFAFA</color>
+
+    <!-- Red and pink colors -->
+    <color name="pink_gradient">#EB8ABA</color>
+    <color name="pink_center_gradient">#F1A8AE</color>
+    <color name="pink">#FD528D</color>
+    <color name="curuba_gradient">#F9C6B2</color>
+    <color name="curuba">#F5C0C2</color>
+    <color name="curuba_soft_pink">#F6AEBE</color>
+    <color name="pink_strong">#F23F93</color>
+    <color name="pink_soft">#F89EC4</color>
+    <color name="red_strong">#F1476A</color>
+    <color name="red_soft">#F26D81</color>
+
+    <!-- Green colors -->
+    <color name="green_strong">#48B1AB</color>
+    <color name="green">#80E0C5</color>
+    <color name="green_soft">#8DF4CA</color>
+    <color name="green_lemon">#AFFF52</color>
+
+    <!-- Gray colors -->
+    <color name="gray_soft">#EEEEEE</color>
+    <color name="gray_light">#DDDDDD</color>
+    <color name="gray_strong">#606060</color>
+    <color name="gray">#999999</color>
+
+    <!-- blue colors -->
+    <color name="blue_soft">#6dd5ed</color>
+    <color name="blue">#008AC9</color>
+    <color name="blue_strong">#1E6EA8</color>
+
+    <!-- magenta colors -->
+    <color name="magenta_strong">#FB317E</color>
+    <color name="magenta">#F555B5</color>
+    <color name="magenta_soft">#EB7CEF</color>
+
 </resources>

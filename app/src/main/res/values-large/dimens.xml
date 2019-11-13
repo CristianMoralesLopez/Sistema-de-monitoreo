@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Lines -->
+    <dimen name="micro_space">3.5dp</dimen>
+    <dimen name="line_thin">5dp</dimen>
+    <dimen name="line_gross">7dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_diminute">6dp</dimen>
+    <dimen name="margin_xsmall">11dp</dimen>
+    <dimen name="margin_small">16dp</dimen>
+    <dimen name="margin_default">19dp</dimen>
+    <dimen name="margin_large">22dp</dimen>
+    <dimen name="margin_xlarge">26dp</dimen>
+
+
+    <!-- Sizes -->
+    <dimen name="size_xxs">26dp</dimen>
+    <dimen name="size_xs">34dp</dimen>
+    <dimen name="size_s">38dp</dimen>
+    <dimen name="size_m">45dp</dimen>
+    <dimen name="size_l">51dp</dimen>
+    <dimen name="size_xl">59dp</dimen>
+    <dimen name="size_xxl">67dp</dimen>
+
+    <!-- Bodies -->
+    <dimen name="body_petit">77dp</dimen>
+    <dimen name="body_small">96dp</dimen>
+    <dimen name="body_average">112dp</dimen>
+    <dimen name="body_big">128dp</dimen>
+    <dimen name="body_bigger">144dp</dimen>
+    <dimen name="body_huge">160dp</dimen>
+    <dimen name="body_very_huge">260dp</dimen>
+    <dimen name="body_xhuge">320dp</dimen>
+    <dimen name ="body_max">400dp</dimen>
+
+    <!-- Circular bodies -->
+    <dimen name="circular_small">44dp</dimen>
+    <dimen name="circular_normal">54dp</dimen>
+    <dimen name="circular_bit">64dp</dimen>
+    <dimen name="circular_small_radius">22dp</dimen>
+    <dimen name="circular_normal_radius">27dp</dimen>
+    <dimen name="circular_bit_radius">32dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_ant_small">4.9sp</dimen>
+    <dimen name="text_size_ant">7.8sp</dimen>
+    <dimen name="text_size_xxs">9.8sp</dimen>
+    <dimen name="text_size_xsmall">11.8sp</dimen>
+    <dimen name="text_size_small">13.7sp</dimen>
+    <dimen name="text_size_medium">15.7sp</dimen>
+    <dimen name="text_size_normal">18sp</dimen>
+    <dimen name="text_size_large">19.6sp</dimen>
+    <dimen name="text_size_xlarge">21.6sp</dimen>
+    <dimen name="text_size_huge">23.5sp</dimen>
+    <dimen name="text_size_max">27.4sp</dimen>
+
+</resources>
