@@ -8,18 +8,6 @@
     <color name="white">#FFFFFF</color>
     <color name="almost_white">#FAFAFA</color>
 
-    <!-- Red and pink colors -->
-    <color name="pink_gradient">#EB8ABA</color>
-    <color name="pink_center_gradient">#F1A8AE</color>
-    <color name="pink">#FD528D</color>
-    <color name="curuba_gradient">#F9C6B2</color>
-    <color name="curuba">#F5C0C2</color>
-    <color name="curuba_soft_pink">#F6AEBE</color>
-    <color name="pink_strong">#F23F93</color>
-    <color name="pink_soft">#F89EC4</color>
-    <color name="red_strong">#F1476A</color>
-    <color name="red_soft">#F26D81</color>
-
     <!-- Green colors -->
     <color name="green_strong">#48B1AB</color>
     <color name="green">#80E0C5</color>
