@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.cristian.sistemademonitoreo.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import org.achartengine.GraphicalView;
@@ -18,6 +20,8 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+
+import medicalpatient.graphicecg.LineGraph;
 
 public class Electrocardiograma extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.cristian.sistemademonitoreo.R;
 
 import java.util.ArrayList;
 

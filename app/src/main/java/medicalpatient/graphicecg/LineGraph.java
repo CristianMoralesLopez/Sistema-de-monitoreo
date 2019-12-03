@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient.graphicecg;
 
 import android.content.Context;
 import android.graphics.Color;

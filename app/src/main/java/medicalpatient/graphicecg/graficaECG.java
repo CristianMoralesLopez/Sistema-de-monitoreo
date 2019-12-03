@@ -1,21 +1,12 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient.graphicecg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 
-import org.achartengine.ChartFactory;
+import com.cristian.sistemademonitoreo.R;
+
 import org.achartengine.GraphicalView;
-import org.achartengine.model.XYMultipleSeriesDataset;
-import org.achartengine.model.XYSeries;
-import org.achartengine.renderer.XYMultipleSeriesRenderer;
-import org.achartengine.renderer.XYSeriesRenderer;
 
 public class graficaECG extends AppCompatActivity {
 

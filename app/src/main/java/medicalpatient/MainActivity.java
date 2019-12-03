@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.cristian.sistemademonitoreo.R;
+
+import medicalpatient.graphicecg.graficaECG;
 
 public class MainActivity extends AppCompatActivity {
 
