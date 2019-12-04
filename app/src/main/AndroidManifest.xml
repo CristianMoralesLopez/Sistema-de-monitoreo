@@ -15,19 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PulsoService"></activity>
-        <activity android:name=".Login" />
-        <activity android:name=".Landing">
+        <activity android:name="medicalpatient.graphicecg.graficaECG"/>
+
+        <activity android:name="medicalpatient.Electrocardiograma" />
+
+        <activity android:name="medicalpatient.EscaneoBluetooh" />
+
+        <activity android:name="medicalpatient.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".graficaECG" />
-        <activity android:name=".Electrocardiograma" />
-        <activity android:name=".EscaneoBluetooh" />
-        <activity android:name=".MainActivity" />
-    </application>
 
+        <activity android:name="medicalpatient.help.HelpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name="medicalpatient.profile.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+    </application>
 </manifest>

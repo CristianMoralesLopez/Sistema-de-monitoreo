@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient.cristian.sistemademonitoreo;
 
 import android.content.Context;
 

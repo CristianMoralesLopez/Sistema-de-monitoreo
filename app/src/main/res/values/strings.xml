@@ -85,4 +85,8 @@ Máximo 2 reprogramaciones por Asesoría.
 
     <string name="action_settings">Settings</string>
 
+    <!-- help-->
+    <string name="mailsubject">Asunto</string>
+    <string name="helpzone">Enviar</string>
+
 </resources>

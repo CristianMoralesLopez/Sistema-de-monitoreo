@@ -1,7 +1,6 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient;
 
 import android.Manifest;
-import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
@@ -18,15 +17,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.cristian.sistemademonitoreo.R;
 
 import java.util.List;
 import java.util.UUID;
 
-import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.makeText;
 
 public class EscaneoBluetooh extends AppCompatActivity {

@@ -5,19 +5,12 @@
 
     <ImageView
         android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
-        android:layout_toLeftOf="@id/view_aux"
+        android:layout_width="208.5dp"
+        android:layout_height="130.3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="-1dp"
         android:rotation="180"
         android:src="@drawable/footer_1" />
-
-    <View
-        android:id="@+id/view_aux"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/text_size_ant" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,6 +47,7 @@
             android:hint="@string/email"
             android:nextFocusDown="@id/password"
             android:textColor="@color/blue_strong"
+
             android:textSize="@dimen/text_size_large" />
 
 
@@ -71,7 +65,7 @@
 
 
         <TextView
-            android:id="@+id/passwordLost"
+            android:id="@+id/help1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -91,22 +85,15 @@
             android:layout_marginBottom="@dimen/margin_default"
             android:background="@drawable/rounded_circle_blue"
             android:elevation="15dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:onClick="Sesion"
             android:paddingHorizontal="@dimen/body_petit"
             android:paddingVertical="@dimen/text_size_medium"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:fontFamily="@font/montserrat_medium"
             android:textSize="@dimen/text_size_medium" />
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/footer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/footer_1" />
 
 </RelativeLayout>
