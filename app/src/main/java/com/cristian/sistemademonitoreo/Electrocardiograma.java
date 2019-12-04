@@ -56,7 +56,7 @@ public class Electrocardiograma extends AppCompatActivity {
         valoresElectro = new ArrayList<>();
 
         try {
-            datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.0.100"));
+            datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.0.101"));
        } catch (SocketException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
@@ -130,9 +130,6 @@ public class Electrocardiograma extends AppCompatActivity {
                 datagramSocket.receive(peticion);
 
                 String valor = new String(peticion.getData());
-
-
-
                 valor = valor.replaceAll("\\u0000", "");
 
 
@@ -147,12 +144,6 @@ public class Electrocardiograma extends AppCompatActivity {
                 line.addCoordenada(valores,y);
 
                 view.repaint();
-
-
-
-
-
-
                 /*    ((AppCompatActivity)me).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
