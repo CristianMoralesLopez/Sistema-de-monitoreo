@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnScan;
     private Button btnElectrocardiograma;
     private Button btnECG;
+    private Button btnPulso;
 
     private static final int REQUEST_ENABLE_BT = 1;
     private BluetoothAdapter bluetoothAdapter;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnScan = findViewById(R.id.btnescanear);
         btnElectrocardiograma = findViewById(R.id.btnElectro);
         btnECG = findViewById(R.id.btnECG);
+        btnPulso = findViewById(R.id.btnActivityPulso);
 
 
 
@@ -68,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, graficaECG.class);
+                startActivity(i);
+            }
+        });
+
+        btnPulso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, PulsoService.class);
                 startActivity(i);
             }
         });

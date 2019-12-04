@@ -29,7 +29,6 @@ public class Login extends AppCompatActivity  {
     private EditText txtCorreo;
     private EditText txtContraseña;
     private Button btnLogin;
-    private SignInButton signInButton;
 
 
     @Override

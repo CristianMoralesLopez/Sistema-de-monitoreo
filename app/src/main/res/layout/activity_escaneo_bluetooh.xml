@@ -6,8 +6,23 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="300dp"
         android:id="@+id/bluetoothdevice"></ListView>
 
+
+    <Button
+        android:id="@+id/btnpulso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Tomar pulso"></Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="salsa"
+        android:id="@+id/lblPulso"
+        ></TextView>
 
 </LinearLayout>
