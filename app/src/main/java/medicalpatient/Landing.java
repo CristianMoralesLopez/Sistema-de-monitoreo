@@ -1,4 +1,4 @@
-package com.cristian.sistemademonitoreo;
+package medicalpatient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 
 
+import com.cristian.sistemademonitoreo.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import medicalpatient.MainActivity;
+import medicalpatient.login.LoginActivity;
 
 public class Landing extends AppCompatActivity {
 
@@ -29,7 +33,7 @@ public class Landing extends AppCompatActivity {
 
                 if(firebaseUser ==null) {
 
-                    Intent intent = new Intent(Landing.this, Login.class);
+                    Intent intent = new Intent(Landing.this, LoginActivity.class);
                     startActivity(intent);
                 }else{
 
