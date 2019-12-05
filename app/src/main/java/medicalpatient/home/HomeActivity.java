@@ -20,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.cristian.sistemademonitoreo.R;
 import com.google.android.material.navigation.NavigationView;
 
+import medicalpatient.Electrocardiograma;
 import medicalpatient.Parametros.ListaElectrocardiograma;
 import medicalpatient.Parametros.ListadoPulso;
 import medicalpatient.help.HelpActivity;
@@ -87,10 +88,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Home",Toast.LENGTH_LONG);
                 break;
 */
-            case R.id.profile:
-                /*Toast.makeText(this, "account", Toast.LENGTH_LONG);
-                in = new Intent(this, ProfileActivity.class);
-                startActivity(in);*/
+            case R.id.ecgActivity:
+                Toast.makeText(this, "Electrocardiograma", Toast.LENGTH_LONG);
+
+                in = new Intent(HomeActivity.this, Electrocardiograma.class);
+                startActivity(in);
                 break;
 /*
             case R.id.agenda:

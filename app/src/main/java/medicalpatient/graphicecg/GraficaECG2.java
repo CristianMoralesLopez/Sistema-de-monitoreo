@@ -1,21 +1,18 @@
 package medicalpatient.graphicecg;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cristian.sistemademonitoreo.R;
 
 import org.achartengine.GraphicalView;
 
-import java.text.StringCharacterIterator;
-
 import medicalpatient.Parametros.AgentPulso;
 import medicalpatient.utils.ListDuo;
 import utils.DefaultCallback;
 
-public class graficaECG extends AppCompatActivity implements DefaultCallback {
-
+public class GraficaECG2 extends AppCompatActivity implements DefaultCallback {
 
     private static GraphicalView view;
     private LineGraph line = new LineGraph();
@@ -35,7 +32,7 @@ public class graficaECG extends AppCompatActivity implements DefaultCallback {
 
         agentPulso = new AgentPulso();
 
-        agentPulso.getDataMonitorDate((String) bundle.get("id"),"0",this);
+        agentPulso.getDataMonitorDate((String) bundle.get("id"),"1",this);
 
     }
 
@@ -64,11 +61,11 @@ public class graficaECG extends AppCompatActivity implements DefaultCallback {
                         String valorX = listDuo.get(i).getValue1();
                         System.out.println("VALOR X" + valorX);
 
-                      valorX =  valorX.replaceAll(":","");
-
-                        if(valorX.charAt(0)=='0'){
-                            valorX = valorX.substring(1,valorX.length()-2);
-                        }
+//                        valorX =  valorX.replaceAll(":","");
+//
+//                        if(valorX.charAt(0)=='0'){
+//                            valorX = valorX.substring(1,valorX.length()-2);
+//                        }
 
                         String valorY = listDuo.get(i).getValue2();
 
@@ -83,7 +80,7 @@ public class graficaECG extends AppCompatActivity implements DefaultCallback {
                     }
 
 
-                     view.repaint();
+                    view.repaint();
 
                 }
             };

@@ -23,6 +23,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name="medicalpatient.graphicecg.graficaECG" />
+        <activity android:name="medicalpatient.graphicecg.GraficaECG2" />
         <activity
             android:name="medicalpatient.home.HomeActivity"
             android:screenOrientation="portrait"

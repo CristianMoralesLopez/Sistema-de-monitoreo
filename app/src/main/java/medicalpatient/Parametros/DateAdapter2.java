@@ -12,16 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cristian.sistemademonitoreo.R;
 
+import medicalpatient.graphicecg.GraficaECG2;
 import medicalpatient.graphicecg.graficaECG;
 
-
-public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateHolder> {
-
+public class DateAdapter2  extends RecyclerView.Adapter<DateAdapter2.DateHolder> {
     private AgentMonitor agent;
     private Activity activity;
 
 
-    public DateAdapter(AgentMonitor agent, Activity activity) {
+    public DateAdapter2(AgentMonitor agent, Activity activity) {
         this.agent = agent;
         this.activity = activity;
     }
@@ -58,11 +57,10 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateHolder> {
 
         @Override
         public void onClick(View v) {
-            Intent in = new Intent(activity, graficaECG.class);
+            Intent in = new Intent(activity, GraficaECG2.class);
             in.putExtra("id", agent.dates.get(position));
             in.putExtra("fecha", agent.dates.get(position));
             activity.startActivity(in);
         }
     }
-
 }

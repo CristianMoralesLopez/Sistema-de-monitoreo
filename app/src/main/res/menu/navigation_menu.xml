@@ -6,8 +6,8 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/profile"
-            android:title="MI CUENTA" />
+            android:id="@+id/ecgActivity"
+            android:title="REALIZAR ECG" />
         <item
             android:id="@+id/pulso"
             android:title="PULSO" />

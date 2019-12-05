@@ -30,9 +30,11 @@ public class AgentPulso {
         return takes;
     }
 
+
+
     public void setTakes(ListDuo takes) {
         this.takes = takes;
-        INSTANCE = this;
+
     }
 
     public ArrayList<String> getDates() {
@@ -48,9 +50,10 @@ public class AgentPulso {
     public AgentPulso(){
         dates = new ArrayList<String>();
         takes = new ListDuo();
+        INSTANCE = this;
     }
 
-    public void getDataMonitorDate(final String date, final DefaultCallback notify) {
+    public void getDataMonitorDate(final String date, final String type, final DefaultCallback notify) {
 
         new Thread(new Runnable() {
             @Override
@@ -62,9 +65,10 @@ public class AgentPulso {
                             .build();
 
 
+
                     RequestBody body = new FormBody.Builder()
-                            .add("id", "b4Suc3zhlPbR3LJyy7QY7vGtHUQ2")
-                            .add("type", "0")
+                            .add("id", LocalDataBase.getInstance(null).getUser().getId())
+                            .add("type", type)
                             .add("date", date)
                             .build();
 
@@ -82,7 +86,14 @@ public class AgentPulso {
 
                         JSONObject object = new JSONObject(response.body().string());
 
-                        JSONArray array = object.getJSONArray("pulso");
+                        JSONArray array = null;
+                        if(type.equals("0")){
+                            array = object.getJSONArray("pulso");
+                        }else{
+                           array = object.getJSONArray("ecg");
+                        }
+
+
 
                         takes = new ListDuo();
 

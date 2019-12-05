@@ -1,5 +1,6 @@
 package medicalpatient;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -20,8 +21,10 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import medicalpatient.graphicecg.LineGraph;
+import medicalpatient.model.LocalDataBase;
 
 public class Electrocardiograma extends AppCompatActivity {
 
@@ -60,7 +63,7 @@ public class Electrocardiograma extends AppCompatActivity {
         valoresElectro = new ArrayList<>();
 
         try {
-            datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.0.101"));
+            datagramSocket = new DatagramSocket(55555, InetAddress.getByName("192.168.1.61"));
        } catch (SocketException e) {
             e.printStackTrace();
         } catch (UnknownHostException e) {
@@ -98,9 +101,55 @@ public class Electrocardiograma extends AppCompatActivity {
         btnFirebase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference databaseReference = firebaseDatabase.getReference();
 
-                databaseReference.child("Cristian").child("valores2").setValue(valoresElectro);
+                Calendar calendario = Calendar.getInstance();
+
+                int intHora, intMinutos, intSegundos,intAño,intMes,intDia;
+
+                intHora =calendario.get(Calendar.HOUR_OF_DAY);
+                intMinutos = calendario.get(Calendar.MINUTE);
+                intSegundos = calendario.get(Calendar.SECOND);
+                intAño = calendario.get(Calendar.YEAR) ;
+                intMes = calendario.get(Calendar.MONTH) + 1;
+                intDia = calendario.get(Calendar.DAY_OF_MONTH);
+
+
+
+
+
+
+                String segundos, minutos,hora;
+
+                if (intHora>0 && intHora<10){
+                    hora= "0"+intHora;
+                }else{
+
+                    hora= ""+intHora;
+                }
+
+                if (intMinutos>0 && intMinutos<10){
+                    minutos= "0"+intMinutos;
+                }else{
+
+                    minutos= ""+intMinutos;
+                }
+                if (intSegundos>0 && intSegundos<10){
+                    segundos= "0"+intSegundos;
+                }else{
+
+                    segundos= ""+intSegundos;
+                }
+
+
+                String tiempo = (hora + ":" + minutos + ":" + segundos);
+
+                DatabaseReference databaseReference = firebaseDatabase.getReference();
+                DatabaseReference databaseReference1 = firebaseDatabase.getReference();
+
+                databaseReference.child("pacientes").child(LocalDataBase.getInstance(null).getUser().getId()).child("monitoreo").child("ecg").child(""+intAño).child(""+intMes)
+                        .child(""+intDia).child(tiempo).setValue(valoresElectro);
+                databaseReference.child("pacientes").child(LocalDataBase.getInstance(null).getUser().getId()).child("monitoreo").
+                        child("ecg").child("tomas").child("0").child("fecha").setValue(""+intAño+"/"+intMes+"/"+intDia+"/"+tiempo);
 
             }
         });
@@ -112,6 +161,7 @@ public class Electrocardiograma extends AppCompatActivity {
     private class SimpleTask extends AsyncTask<String, Integer, Void> {
 
 
+        @SuppressLint("WrongThread")
         @Override
         protected Void doInBackground(String... params) {
 

@@ -35,12 +35,22 @@ public class AgentMonitor {
                             .connectTimeout(15, TimeUnit.SECONDS)
                             .readTimeout(15, TimeUnit.SECONDS)
                             .build();
+                    String type = "";
 
-                    Log.i("IMPORTANTE",LocalDataBase.getInstance(null).getUser().getId());
+                    if(pulso){
+
+                        type = "0";
+                    }
+
+                    if(ecg){
+                        type = "1";
+                    }
+
+
 
                     RequestBody body = new FormBody.Builder()
                             .add("id", LocalDataBase.getInstance(null).getUser().getId())
-                            .add("type", "0")
+                            .add("type", type)
                             .build();
 
                     Request request = new Request.Builder()
