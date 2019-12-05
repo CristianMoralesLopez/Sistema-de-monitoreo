@@ -50,9 +50,9 @@ public class LineGraph {
         mRender.setXLabelsColor(Color.BLACK);
         mRender.setXTitle("Tiempo [s]");
         mRender.setYTitle("Voltaje [mV]");
-        mRender.setAxisTitleTextSize(50);
+      //  mRender.setAxisTitleTextSize(50);
         mRender.setLabelsColor(Color.BLACK);
-        mRender.setXLabels(20);
+      //  mRender.setXLabels(20);
         mRender.setMargins(new int [] {80,80,80,80});
         mRender.addSeriesRenderer(mCurrentRenderer);
 

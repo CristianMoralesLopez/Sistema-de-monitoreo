@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation files('libs/achartengine-1.0.0.jar')
+    implementation 'com.google.android.material:material:1.0.0'
 }
 
 configurations {

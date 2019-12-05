@@ -8,12 +8,20 @@ import com.cristian.sistemademonitoreo.R;
 
 import org.achartengine.GraphicalView;
 
-public class graficaECG extends AppCompatActivity {
+import java.text.StringCharacterIterator;
+
+import medicalpatient.Parametros.AgentPulso;
+import medicalpatient.utils.ListDuo;
+import utils.DefaultCallback;
+
+public class graficaECG extends AppCompatActivity implements DefaultCallback {
 
 
     private static GraphicalView view;
     private LineGraph line = new LineGraph();
     private static Thread thread;
+    private AgentPulso agentPulso;
+    private ListDuo listDuo;
 
 
 
@@ -23,28 +31,11 @@ public class graficaECG extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafica_ecg);
 
-        thread = new Thread(){
-          public void run(){
+        Bundle bundle = getIntent().getExtras();
 
-              for(int i =0 ; i<20;i++) {
-                  try {
-                      Thread.sleep(1000);
-                  } catch (InterruptedException e) {
-                      e.printStackTrace();
-                  }
+        agentPulso = new AgentPulso();
 
-                  double x = i;
-
-                  line.addCoordenada(x,x);
-
-                  view.repaint();
-
-              }
-
-          }
-        };
-
-        thread.start();
+        agentPulso.getDataMonitorDate((String) bundle.get("id"),this);
 
     }
 
@@ -56,8 +47,51 @@ public class graficaECG extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onFinishProcess(boolean hasSucceeded, Object result) {
+        if(hasSucceeded){
 
 
 
+            thread = new Thread(){
+                public void run(){
+                    listDuo = agentPulso.getTakes();
 
+
+
+                    for(int i =0; i< listDuo.size();i++){
+
+                        String valorX = listDuo.get(i).getValue1();
+                        System.out.println("VALOR X" + valorX);
+
+                      valorX =  valorX.replaceAll(":","");
+
+                        if(valorX.charAt(0)=='0'){
+                            valorX = valorX.substring(1,valorX.length()-2);
+                        }
+
+                        String valorY = listDuo.get(i).getValue2();
+
+
+                        double x = Integer.parseInt(valorX);
+                        double y = Integer.parseInt(valorY);
+
+                        System.out.println(valorX);
+                        System.out.println(valorY);
+
+                        line.addCoordenada(x,y);
+                    }
+
+
+                     view.repaint();
+
+                }
+            };
+
+            thread.start();
+
+
+        }
+
+    }
 }

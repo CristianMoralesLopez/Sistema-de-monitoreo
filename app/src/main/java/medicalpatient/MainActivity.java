@@ -11,7 +11,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.cristian.sistemademonitoreo.PulsoService;
+
 import com.cristian.sistemademonitoreo.R;
 
 import medicalpatient.graphicecg.graficaECG;
@@ -78,15 +78,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-        btnPulso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, PulsoService.class);
-                startActivity(i);
-            }
-        });
-
-
     }
 }

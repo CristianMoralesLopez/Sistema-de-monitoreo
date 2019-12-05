@@ -9,14 +9,18 @@
             android:id="@+id/profile"
             android:title="MI CUENTA" />
         <item
-            android:id="@+id/payment"
-            android:title="MÉTODO DE PAGO" />
+            android:id="@+id/pulso"
+            android:title="PULSO" />
+        <item
+            android:id="@+id/electocardiograma"
+            android:title="ELECTROCARDIOGRAMA" />
         <item
             android:id="@+id/help"
             android:title="AYUDA" />
         <item
             android:id="@+id/logout"
             android:title="CERRAR SESIÓN" />
+
     </group>
 
 </menu>

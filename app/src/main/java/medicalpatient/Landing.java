@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import medicalpatient.MainActivity;
+import medicalpatient.home.HomeActivity;
 import medicalpatient.login.LoginActivity;
 
 public class Landing extends AppCompatActivity {
@@ -33,11 +34,11 @@ public class Landing extends AppCompatActivity {
 
                 if(firebaseUser ==null) {
 
-                    Intent intent = new Intent(Landing.this, LoginActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                 }else{
 
-                    Intent intent = new Intent(Landing.this, MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
 
                 }

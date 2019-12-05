@@ -1,6 +1,7 @@
 package medicalpatient.login;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -48,7 +49,9 @@ public class LoginActivity extends AppCompatActivity implements DefaultCallback 
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
+        }
         hideSoftKeyBoard();
     }
 
@@ -71,7 +74,7 @@ public class LoginActivity extends AppCompatActivity implements DefaultCallback 
             Toast.makeText(getApplicationContext(), "Se debe de ingresar una contraseña", Toast.LENGTH_LONG).show();
             return;
         } else
-            agentLogin.registrar(email, password, (utils.DefaultCallback) this);
+            agentLogin.registrar(email, password, (DefaultCallback) this);
     }
 
     @Override

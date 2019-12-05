@@ -20,6 +20,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.cristian.sistemademonitoreo.R;
 import com.google.android.material.navigation.NavigationView;
 
+import medicalpatient.Parametros.ListaElectrocardiograma;
+import medicalpatient.Parametros.ListadoPulso;
 import medicalpatient.help.HelpActivity;
 import medicalpatient.login.LoginActivity;
 
@@ -37,7 +39,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
-        setSupportActionBar(toolbar);
+//00        setSupportActionBar(toolbar);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,15 +97,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Agenda",Toast.LENGTH_LONG);
                 break;
 */
-            case R.id.payment:
-                Toast.makeText(this, "Payment", Toast.LENGTH_LONG);
-                /*in = new Intent(HomeActivity.this, PaymentMethodActivity.class);
-                startActivity(in);*/
+            case R.id.pulso:
+                Toast.makeText(this, "Pulso", Toast.LENGTH_LONG);
+                in = new Intent(HomeActivity.this, ListadoPulso.class);
+                startActivity(in);
                 break;
             case R.id.help:
                 Toast.makeText(this, "Help", Toast.LENGTH_LONG);
 
                 in = new Intent(HomeActivity.this, HelpActivity.class);
+                startActivity(in);
+                break;
+            case R.id.electocardiograma:
+                Toast.makeText(this, "Electrocardiograma", Toast.LENGTH_LONG);
+
+                in = new Intent(HomeActivity.this, ListaElectrocardiograma.class);
                 startActivity(in);
                 break;
 
