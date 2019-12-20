@@ -25,6 +25,7 @@ public class AgentPulso {
     public static  AgentPulso INSTANCE = null;
 
     public ListDuo takes;
+    public medical.model.MonitorTake take;
 
     public ListDuo getTakes() {
         return takes;
@@ -86,27 +87,34 @@ public class AgentPulso {
 
                         JSONObject object = new JSONObject(response.body().string());
 
-                        JSONArray array = null;
+                        JSONObject monitor = null;
                         if(type.equals("0")){
-                            array = object.getJSONArray("pulso");
+                            monitor = object.getJSONObject("pulso");
                         }else{
-                           array = object.getJSONArray("ecg");
+                            monitor = object.getJSONObject("ecg");
                         }
 
+                        take = new medical.model.MonitorTake();
+                        take.setDate(date);
+                        take.setType(Integer.parseInt(type));
+                        take.setTime_start(monitor.getString("horaInicio"));
+                        take.setTime_finish(monitor.getString("horaFin"));
+                        take.setDuration(monitor.getString("duracion"));
+                        take.setTime_pos_start(monitor.getString("horaInicio1"));
+                        take.setTime_pos_finish(monitor.getString("horaFin1"));
 
+                        JSONArray val_1 = monitor.getJSONArray("valoresPulso");
 
-                        takes = new ListDuo();
+                        for (int i = 0; i < val_1.length(); i++)
+                            take.getTakes_1().add(val_1.getInt(i));
 
-                        for (int i = 0; i < array.length(); i++) {
+                        JSONArray val_2 = monitor.getJSONArray("valoresPulso2");
 
-                            JSONArray auxArray =  array.getJSONArray(i);
-                            String fecha =  auxArray.get(0).toString();
-                            String valor =  auxArray.get(1).toString();
+                        for (int i = 0; i < val_2.length(); i++)
+                            take.getTakes_2().add(val_2.getInt(i));
 
-                            takes.add(fecha,valor);
-                        }
-
-                        Log.i("COUNT_TAKES",takes.size()+"");
+                        Log.i("takes_1", take.getTakes_1().size() + "");
+                        Log.i("takes_2", take.getTakes_2().size() + "");
 
                         notify.onFinishProcess(true, "success");
                     } else {

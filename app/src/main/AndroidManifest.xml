@@ -16,13 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="medicalpatient.Parametros.ListaElectrocardiograma"
+        <activity
+            android:name="medicalpatient.Parametros.ListaElectrocardiograma"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="medicalpatient.Parametros.ListadoPulso"
+        <activity
+            android:name="medicalpatient.Parametros.ListadoPulso"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name="medicalpatient.graphicecg.graficaECG" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="medicalpatient.graphicecg.graficaECG"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity android:name="medicalpatient.graphicecg.GraficaECG2" />
         <activity
             android:name="medicalpatient.home.HomeActivity"
@@ -37,6 +43,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name="medicalpatient.Electrocardiograma" />
         <activity android:name="medicalpatient.EscaneoBluetooh" />
