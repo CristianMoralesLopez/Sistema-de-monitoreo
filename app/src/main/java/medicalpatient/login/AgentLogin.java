@@ -1,12 +1,15 @@
 package medicalpatient.login;
 import android.content.Context;
 import androidx.annotation.NonNull;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 import org.json.JSONObject;
 import java.util.concurrent.TimeUnit;
+
 import medicalpatient.model.LocalDataBase;
 import medicalpatient.model.User;
 import medicalpatient.utils.DefaultCallback;
@@ -19,7 +22,11 @@ import okhttp3.Response;
 
 
 public class AgentLogin {
+
     private FirebaseAuth firebaseAuth;
+
+
+
 
     public AgentLogin(Context context) {
         firebaseAuth = FirebaseAuth.getInstance();
@@ -42,6 +49,8 @@ public class AgentLogin {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        System.out.println("QUE PASO"+ task.isSuccessful());
                         if (task.isSuccessful()) {
                             //saveUIDLogin();
                             getUserData(callback);
@@ -53,7 +62,11 @@ public class AgentLogin {
         }).start();
     }
 
-    private void getUserData(final DefaultCallback callback) {
+
+
+
+
+    public void getUserData( final DefaultCallback callback) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -66,9 +79,8 @@ public class AgentLogin {
 
                     RequestBody body = new FormBody.Builder()
                             .add("type", "0")
-                            .add("id", firebaseAuth.getInstance().getCurrentUser().getUid())
+                            .add("id", firebaseAuth.getInstance().getCurrentUser().getUid() + "")
                             .build();
-
 
                     Request request = new Request.Builder()
                             .url(NetworkConstants.URL + NetworkConstants.PATH_PROFILE)
@@ -76,6 +88,8 @@ public class AgentLogin {
                             .build();
 
                     Response response = okhttp.newCall(request).execute();
+
+
 
                     if (response.code() == 200) {
 

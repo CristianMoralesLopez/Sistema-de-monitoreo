@@ -45,13 +45,10 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="medicalpatient.Electrocardiograma" />
-        <activity android:name="medicalpatient.EscaneoBluetooh" />
         <activity
             android:name="medicalpatient.login.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="medicalpatient.MainActivity" />
         <activity
             android:name="medicalpatient.help.HelpActivity"
             android:screenOrientation="portrait"

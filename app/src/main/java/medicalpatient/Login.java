@@ -13,13 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.cristian.sistemademonitoreo.R;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import medicalpatient.MainActivity;
 
 
 public class Login extends AppCompatActivity  {
@@ -89,8 +86,8 @@ public class Login extends AppCompatActivity  {
 
                 if (task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"Bienvenido",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Login.this, MainActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(Login.this, MainActivity.class);
+                    //startActivity(intent);
 
 
 

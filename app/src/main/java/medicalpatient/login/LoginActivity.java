@@ -32,9 +32,7 @@ public class LoginActivity extends AppCompatActivity implements DefaultCallback 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         agentLogin = new AgentLogin(this);
-
         txtCorreo = findViewById(R.id.email);
         txtContraseña = findViewById(R.id.password);
         btnLogin = findViewById(R.id.actionButton);
@@ -74,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements DefaultCallback 
             Toast.makeText(getApplicationContext(), "Se debe de ingresar una contraseña", Toast.LENGTH_LONG).show();
             return;
         } else
-            agentLogin.registrar(email, password, (DefaultCallback) this);
+            agentLogin.registrar(email, password, this);
     }
 
     @Override

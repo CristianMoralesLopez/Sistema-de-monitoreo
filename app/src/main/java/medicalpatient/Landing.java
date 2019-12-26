@@ -11,7 +11,6 @@ import com.cristian.sistemademonitoreo.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import medicalpatient.MainActivity;
 import medicalpatient.home.HomeActivity;
 import medicalpatient.login.LoginActivity;
 
