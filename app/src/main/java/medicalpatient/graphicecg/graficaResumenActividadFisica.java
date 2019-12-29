@@ -18,19 +18,18 @@ import java.util.ArrayList;
 
 import medicalpatient.Parametros.AgentPulso;
 import medicalpatient.Parametros.Rutina;
+import medicalpatient.model.MonitorTake;
 import medicalpatient.utils.ListDuo;
 import utils.DefaultCallback;
 
-public class graficaECG extends AppCompatActivity implements DefaultCallback {
+public class graficaResumenActividadFisica extends AppCompatActivity implements DefaultCallback {
 
 
     private static GraphicalView view;
     private static GraphicalView view1;
     private LineGraph line = new LineGraph();
     private LineGraph line1 = new LineGraph();
-    private static Thread thread;
     private AgentPulso agentPulso;
-    private ListDuo listDuo;
     private TextView lblPulso1;
     private TextView lblPulso2;
     private TextView lblHoraInicio1;
@@ -39,6 +38,14 @@ public class graficaECG extends AppCompatActivity implements DefaultCallback {
     private TextView lblHoraFin2;
     private TextView lblduracion1;
     private TextView lblduracion2;
+    private TextView lblPulsoMinimo1;
+    private TextView lblPulsoMinimo2;
+    private TextView lblPulsoMaximo1;
+    private TextView lblPulsoMaximo2;
+    private TextView lblPasos;
+    private TextView lblKgCalorias;
+
+
 
 
 
@@ -57,18 +64,26 @@ public class graficaECG extends AppCompatActivity implements DefaultCallback {
         view = line.getView(this);
         linearLayout.addView(view);
 
+
         LinearLayout linearLayout2 = findViewById(R.id.graficaActividad2);
         view1 = line1.getView(this);
         linearLayout2.addView(view1);
 
-        lblPulso1 = findViewById(R.id.PulsoPromedio1);
-        lblPulso2 = findViewById(R.id.PulsoPromedio2);
-        lblHoraInicio1 = findViewById(R.id.HoraInicio1);
-        lblHoraInicio2 = findViewById(R.id.HoraInicio2);
-        lblHoraFin1 = findViewById(R.id.HoraFin1);
-        lblHoraFin2 = findViewById(R.id.HoraFin2);
-        lblduracion1 = findViewById(R.id.duracion1);
-        lblduracion2 = findViewById(R.id.duracion2);
+     lblPasos = findViewById(R.id.lblPasos1);
+     lblPulso1 = findViewById(R.id.lblPromedioPulso1);
+     lblPulso2 = findViewById(R.id.lblPromedioPulso2);
+     lblHoraInicio1 = findViewById(R.id.lblHoraInicio1);
+     lblHoraInicio2 = findViewById(R.id.lblHoraInicio2);
+     lblHoraFin1= findViewById(R.id.lblHoraFin1);
+     lblHoraFin2 = findViewById(R.id.lblHoraFin2);
+     lblduracion1 = findViewById(R.id.lblDuracion1);
+     lblduracion2 = findViewById(R.id.lblDuracion2);
+     lblPulsoMinimo1 = findViewById(R.id.lblPulsoMinimo1);
+     lblPulsoMinimo2 = findViewById(R.id.lblPulsoMinimo2);
+     lblPulsoMaximo1 = findViewById(R.id.lblPulsoMaximo1);
+     lblPulsoMaximo2 = findViewById(R.id.lblPulsoMaximo2);
+     lblKgCalorias = findViewById(R.id.lblkgcalorias);
+
 
 
 
@@ -112,16 +127,23 @@ public class graficaECG extends AppCompatActivity implements DefaultCallback {
 
     public void inicializarGrafica (){
 
-        medical.model.MonitorTake rutina = agentPulso.take;
+        MonitorTake rutina = agentPulso.take;
 
-        lblduracion1.setText("1");
-        lblduracion2.setText("1");
+        lblduracion1.setText(rutina.getDuration());
+        lblduracion2.setText(rutina.getDuration());
         lblHoraInicio1.setText(rutina.getTime_start());
         lblHoraInicio2.setText(rutina.getTime_pos_start());
         lblHoraFin1.setText(rutina.getTime_finish());
         lblHoraFin2.setText(rutina.getTime_pos_finish());
-        lblPulso1.setText("90");
-        lblPulso2.setText("70");
+        lblPulso1.setText(rutina.getPulsoPromedio());
+        lblPulso2.setText(rutina.getPulsoPromedio1());
+        lblPulsoMaximo1.setText(rutina.getPulsoMaximo());
+        lblPulsoMaximo2.setText(rutina.getPulsoMaximo1());
+        lblPulsoMinimo1.setText(rutina.getPulsoMinimo());
+        lblPulsoMinimo2.setText(rutina.getPulsoMinimo1());
+        lblPasos.setText(rutina.getPasos());
+        lblKgCalorias.setText(rutina.getKgCalorias());
+
 
         ArrayList <Integer> valores1 = rutina.getTakes_1();
         ArrayList <Integer> valores2 = rutina.getTakes_2();

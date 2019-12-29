@@ -1,8 +1,11 @@
-package medical.model;
+package medicalpatient.model;
+
 
 import java.util.ArrayList;
 
 public class MonitorTake {
+
+
 
     public final static int PULSO = 0;
     public final static int ECG = 1;
@@ -13,6 +16,15 @@ public class MonitorTake {
     private String time_pos_finish;
     private String date;
     private String duration;
+    private String pasos;
+    private String pulsoMaximo;
+    private String pulsoMinimo;
+    private String pulsoPromedio;
+    private String pulsoMaximo1;
+    private String pulsoMinimo1;
+    private String pulsoPromedio1;
+
+    private String kgCalorias;
     private int type;
     private ArrayList<Integer> takes_1;
     private ArrayList<Integer> takes_2;
@@ -85,6 +97,70 @@ public class MonitorTake {
 
     public void setTime_pos_finish(String time_pos_finish) {
         this.time_pos_finish = time_pos_finish;
+    }
+
+    public String getPasos() {
+        return pasos;
+    }
+
+    public void setPasos(String pasos) {
+        this.pasos = pasos;
+    }
+
+    public String getPulsoMaximo() {
+        return pulsoMaximo;
+    }
+
+    public void setPulsoMaximo(String pulsoMaximo) {
+        this.pulsoMaximo = pulsoMaximo;
+    }
+
+    public String getPulsoMinimo() {
+        return pulsoMinimo;
+    }
+
+    public void setPulsoMinimo(String pulsoMinimo) {
+        this.pulsoMinimo = pulsoMinimo;
+    }
+
+    public String getKgCalorias() {
+        return kgCalorias;
+    }
+
+    public void setKgCalorias(String kgCalorias) {
+        this.kgCalorias = kgCalorias;
+    }
+
+    public String getPulsoPromedio() {
+        return pulsoPromedio;
+    }
+
+    public void setPulsoPromedio(String pulsoPromedio) {
+        this.pulsoPromedio = pulsoPromedio;
+    }
+
+    public String getPulsoMaximo1() {
+        return pulsoMaximo1;
+    }
+
+    public void setPulsoMaximo1(String pulsoMaximo1) {
+        this.pulsoMaximo1 = pulsoMaximo1;
+    }
+
+    public String getPulsoMinimo1() {
+        return pulsoMinimo1;
+    }
+
+    public void setPulsoMinimo1(String pulsoMinimo1) {
+        this.pulsoMinimo1 = pulsoMinimo1;
+    }
+
+    public String getPulsoPromedio1() {
+        return pulsoPromedio1;
+    }
+
+    public void setPulsoPromedio1(String pulsoPromedio1) {
+        this.pulsoPromedio1 = pulsoPromedio1;
     }
 
     public ArrayList<Integer> getTakes_2() {

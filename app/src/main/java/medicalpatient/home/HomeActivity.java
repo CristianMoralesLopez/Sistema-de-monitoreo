@@ -53,8 +53,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.nameUserNav);
 
-        pager = findViewById(R.id.view_pager);
-        pager.setPagingEnabled(false);
 
         title = findViewById(R.id.title);
 

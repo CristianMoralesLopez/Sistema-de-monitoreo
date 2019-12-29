@@ -43,21 +43,278 @@
             android:background="@drawable/gradient_vertical_backgroud"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red_strong"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingVertical="@dimen/margin_large"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="Resumen en Reposo"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alignmentMode="alignBounds"
+                android:columnCount="2"
+                android:rowCount="7"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Pasos"
+                    android:textColor="@color/blue_strong"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPasos1"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso promedio"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPromedioPulso1"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Inicio"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblHoraInicio1"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Fin"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblHoraFin1"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duración"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblDuracion1"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso minimo"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPulsoMinimo1"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso Maximo"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPulsoMaximo1"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kg Calorias"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblkgcalorias"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+
+            </GridLayout>
+
+
+
+
             <LinearLayout
                 android:id="@+id/graficaActividad"
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 android:background="@drawable/gradient_vertical_backgroud"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    android:background="@color/blue_strong"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingVertical="@dimen/margin_large"
+                    android:paddingStart="@dimen/size_xxs"
                     android:text="Grafica Pulso Actividad Fisica"
-                    android:textSize="20dp"></TextView>
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_medium" />
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/almost_white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red_strong"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingVertical="@dimen/margin_large"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="Resumen en actividad fisica"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alignmentMode="alignBounds"
+                android:columnCount="2"
+                android:rowCount="7"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso promedio"
+                    android:textColor="@color/blue_strong"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPromedioPulso2"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Inicio"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblHoraInicio2"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hora Fin"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblHoraFin2"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duración"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblDuracion2"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso minimo"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPulsoMinimo2"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso Maximo"
+                    android:textColor="@color/blue_strong"
+                    android:layout_marginTop="@dimen/margin_default"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp"
+                    android:id="@+id/lblPulsoMaximo2"
+                    android:layout_marginTop="@dimen/margin_default"
+                    ></TextView>
+
+
+
+
+            </GridLayout>
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:id="@+id/graficaActividad2"
@@ -66,142 +323,27 @@
                 android:background="@drawable/gradient_vertical_backgroud"
                 android:orientation="vertical">
 
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Grafica Pulso en Reposo"
-                    android:textSize="20dp"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Datos"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Actividad fisica"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Reposo"></TextView>
+                    android:background="@color/blue_strong"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:paddingVertical="@dimen/margin_large"
+                    android:paddingStart="@dimen/size_xxs"
+                    android:text="Grafica Pulso Cardiaco en Reposo"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_marginTop="15dp"/>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pulso "></TextView>
 
-                <TextView
-                    android:id="@+id/PulsoPromedio1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Actividad fisica"></TextView>
 
-                <TextView
-                    android:id="@+id/PulsoPromedio2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Reposo"></TextView>
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hora Inicio"></TextView>
-
-                <TextView
-                    android:id="@+id/HoraInicio1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="Actividad fisica"></TextView>
-
-                <TextView
-                    android:id="@+id/HoraInicio2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Reposo"></TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hora Fin"></TextView>
-
-                <TextView
-                    android:id="@+id/HoraFin1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Actividad fisica"></TextView>
-
-                <TextView
-                    android:id="@+id/HoraFin2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Reposo"></TextView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Duracion"></TextView>
-
-                <TextView
-                    android:id="@+id/duracion1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Actividad fisica"></TextView>
-
-                <TextView
-                    android:id="@+id/duracion2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Reposo"></TextView>
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

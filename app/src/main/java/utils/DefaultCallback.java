@@ -7,5 +7,4 @@ package utils;
 public interface DefaultCallback {
 
     void onFinishProcess(boolean hasSucceeded, Object result);
-
 }

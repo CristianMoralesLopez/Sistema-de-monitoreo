@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cristian.sistemademonitoreo.R;
 
-import medicalpatient.graphicecg.graficaECG;
+import medicalpatient.graphicecg.graficaResumenActividadFisica;
 
 
 public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateHolder> {
@@ -58,7 +58,7 @@ public class DateAdapter extends RecyclerView.Adapter<DateAdapter.DateHolder> {
 
         @Override
         public void onClick(View v) {
-            Intent in = new Intent(activity, graficaECG.class);
+            Intent in = new Intent(activity, graficaResumenActividadFisica.class);
             in.putExtra("id", agent.dates.get(position));
             in.putExtra("fecha", agent.dates.get(position));
             activity.startActivity(in);

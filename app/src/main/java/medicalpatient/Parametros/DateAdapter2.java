@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cristian.sistemademonitoreo.R;
 
 import medicalpatient.graphicecg.GraficaECG2;
-import medicalpatient.graphicecg.graficaECG;
 
 public class DateAdapter2  extends RecyclerView.Adapter<DateAdapter2.DateHolder> {
     private AgentMonitor agent;

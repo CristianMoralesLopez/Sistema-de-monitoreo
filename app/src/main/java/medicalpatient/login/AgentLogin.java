@@ -1,11 +1,15 @@
 package medicalpatient.login;
 import android.content.Context;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import org.json.JSONObject;
 import java.util.concurrent.TimeUnit;
@@ -24,9 +28,6 @@ import okhttp3.Response;
 public class AgentLogin {
 
     private FirebaseAuth firebaseAuth;
-
-
-
 
     public AgentLogin(Context context) {
         firebaseAuth = FirebaseAuth.getInstance();
@@ -53,7 +54,19 @@ public class AgentLogin {
                         System.out.println("QUE PASO"+ task.isSuccessful());
                         if (task.isSuccessful()) {
                             //saveUIDLogin();
-                            getUserData(callback);
+                            FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                                    if(!task.isSuccessful()){
+                                        Log.v("failed", task.getException()+"");
+                                        callback.onFinishProcess(false,"fail process to logIn");
+                                    }else{
+                                        String token = task.getResult().getToken();
+                                        getUserData(callback,token);
+                                    }
+                                }
+                            });
+
                         } else
                             callback.onFinishProcess(false, null);
                     }
@@ -63,10 +76,7 @@ public class AgentLogin {
     }
 
 
-
-
-
-    public void getUserData( final DefaultCallback callback) {
+    public void getUserData(final DefaultCallback callback, final String token) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -79,6 +89,7 @@ public class AgentLogin {
 
                     RequestBody body = new FormBody.Builder()
                             .add("type", "0")
+                            .add("token",token)
                             .add("id", firebaseAuth.getInstance().getCurrentUser().getUid() + "")
                             .build();
 
@@ -95,17 +106,38 @@ public class AgentLogin {
 
                         JSONObject object = new JSONObject(response.body().string());
 
-                        User user = new User();
-                        user.setId(object.getString("id"));
-                        user.setEmail(object.getString("email"));
-                        user.setName(object.getString("nombre"));
-                        user.setPhone((object.getString("telefono")));
-                        user.setDepartment((object.getString("departamento")));
-                        user.setAdress((object.getString("direccion")));
-                        user.setMunicipality((object.getString("municipio")));
-                        user.setBirth((object.getString("nacimiento")));
+                        User patient = new User();
+                        patient.setUID(object.getString("id"));
+                        patient.setName(object.getString("nombre"));
+                        patient.setId(object.getString("cedula"));
+                        patient.setBirth(object.getString("fecha_nacimiento"));
+                        patient.setAge(object.getString("edad"));
+                        patient.setRisk(object.getString("riesgo"));
+                        patient.setDiagnostic(object.getString("diagnostico"));
+                        patient.setEmail(object.getString("email"));
+                        patient.setMobile_number(object.getString("celular"));
+                        patient.setWeight(object.getString("altura"));
+                        patient.setHeight(object.getString("peso"));
 
-                        LocalDataBase.getInstance(null).saveUser(user);
+                        try {
+                            patient.setTelephone(object.getString("telefono"));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        patient.setState(object.getString("departamento"));
+                        patient.setCity(object.getString("ciudad"));
+                        patient.setAddress(object.getString("direccion"));
+                        patient.setRef(object.getString("ref"));
+
+                        JSONObject inf_contact = object.getJSONObject("contacto");
+                        patient.setName_contact(inf_contact.getString("nombre"));
+                        patient.setTelephone_contact(inf_contact.getString("telefono"));
+                        patient.setRelation(inf_contact.getString("parentesco"));
+
+
+                        LocalDataBase.getInstance(null).saveUser(patient);
+
                         callback.onFinishProcess(true, null);
                     } else
                         callback.onFinishProcess(false, null);

@@ -13,7 +13,7 @@ public class LocalDataBase {
     private User me;
 
     public LocalDataBase(Context context) {
-        preferences = context.getSharedPreferences("MedicalDoctor", 0);
+        preferences = context.getSharedPreferences("MedicalPaciente", 0);
         loadUser();
     }
 
