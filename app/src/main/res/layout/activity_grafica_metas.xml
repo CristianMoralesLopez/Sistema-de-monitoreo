@@ -169,7 +169,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue_strong"
+            android:background="@color/red_strong"
             android:fontFamily="@font/montserrat_regular"
             android:paddingVertical="@dimen/margin_large"
             android:paddingStart="@dimen/size_xxs"
@@ -188,13 +188,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/red_strong"
+                android:background="@color/blue_strong"
                 android:fontFamily="@font/montserrat_regular"
                 android:paddingVertical="@dimen/margin_large"
                 android:paddingStart="@dimen/size_xxs"
                 android:text="Resumen en Reposo"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_medium" />
+                android:textSize="@dimen/text_size_medium"
+                android:layout_marginTop="@dimen/margin_default"/>
 
             <GridLayout
                 android:layout_width="match_parent"

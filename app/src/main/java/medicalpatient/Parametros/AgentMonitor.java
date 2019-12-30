@@ -9,13 +9,14 @@ import java.util.concurrent.TimeUnit;
 
 
 import medicalpatient.model.LocalDataBase;
+import medicalpatient.utils.DefaultCallback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import utils.DefaultCallback;
-import utils.NetworkConstants;
+
+import medicalpatient.utils.NetworkConstants;
 
 public class AgentMonitor {
 
@@ -49,7 +50,7 @@ public class AgentMonitor {
 
 
                     RequestBody body = new FormBody.Builder()
-                            .add("id", LocalDataBase.getInstance(null).getUser().getId())
+                            .add("id", LocalDataBase.getInstance(null).getUser().getUID())
                             .add("type", type)
                             .build();
 

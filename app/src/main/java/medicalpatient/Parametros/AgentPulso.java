@@ -6,21 +6,21 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 
 import medicalpatient.model.LocalDataBase;
 import medicalpatient.model.MonitorTake;
+import medicalpatient.utils.DefaultCallback;
 import medicalpatient.utils.ListDuo;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import utils.DefaultCallback;
-import utils.DefaultCallback2;
-import utils.NetworkConstants;
+
+import medicalpatient.utils.DefaultCallback2;
+import medicalpatient.utils.NetworkConstants;
 
 public class AgentPulso {
 
@@ -70,7 +70,7 @@ public class AgentPulso {
 
 
                     RequestBody body = new FormBody.Builder()
-                            .add("id", LocalDataBase.getInstance(null).getUser().getId())
+                            .add("id", LocalDataBase.getInstance(null).getUser().getUID())
                             .add("type", type)
                             .add("date", date)
                             .build();
@@ -153,7 +153,7 @@ public class AgentPulso {
 
 
                     RequestBody body = new FormBody.Builder()
-                            .add("id", LocalDataBase.getInstance(null).getUser().getId())
+                            .add("id", LocalDataBase.getInstance(null).getUser().getUID())
                             .add("type", "0")
                             .add("date","2019/12/1")
                             .build();
@@ -212,14 +212,16 @@ public class AgentPulso {
 
                     if (response.code() == 200) {
 
+                        System.out.println("Si entre al 200");
+
                         JSONObject object = new JSONObject(response.body().string());
 
-                        JSONObject monitor = null;
-                        if(type.equals("0")){
-                            monitor = object.getJSONObject("pulso");
-                        }else{
-                            monitor = object.getJSONObject("ecg");
-                        }
+                        JSONObject monitor = object;
+//                        if(type.equals("0")){
+//                            monitor = object.getJSONObject("pulso");
+//                        }else{
+//                            monitor = object.getJSONObject("ecg");
+//                        }
 
                         take = new MonitorTake();
                         take.setType(Integer.parseInt(type));

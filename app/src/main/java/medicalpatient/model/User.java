@@ -21,6 +21,7 @@ public class User {
     private String address;
     private String weight;
     private String height;
+    private String token;
 
     /**
      * Contact Data
@@ -181,5 +182,13 @@ public class User {
 
     public void setHeight(String height) {
         this.height = height;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

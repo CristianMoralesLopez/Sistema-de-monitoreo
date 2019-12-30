@@ -2,25 +2,17 @@ package medicalpatient.graphicecg;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.cristian.sistemademonitoreo.R;
-
 import org.achartengine.GraphicalView;
-
-import java.text.StringCharacterIterator;
 import java.util.ArrayList;
-
 import medicalpatient.Parametros.AgentPulso;
-import medicalpatient.Parametros.Rutina;
 import medicalpatient.model.MonitorTake;
-import medicalpatient.utils.ListDuo;
-import utils.DefaultCallback;
+import medicalpatient.utils.DefaultCallback;
 
 public class graficaResumenActividadFisica extends AppCompatActivity implements DefaultCallback {
 

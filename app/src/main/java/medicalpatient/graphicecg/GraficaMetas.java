@@ -17,8 +17,7 @@ import java.util.ArrayList;
 
 import medicalpatient.Parametros.AgentPulso;
 import medicalpatient.model.MonitorTake;
-import utils.DefaultCallback;
-import utils.DefaultCallback2;
+import medicalpatient.utils.DefaultCallback2;
 
 public class GraficaMetas extends AppCompatActivity implements DefaultCallback2 {
 
@@ -96,10 +95,7 @@ public class GraficaMetas extends AppCompatActivity implements DefaultCallback2 
 
         // iniciacion componentes Resumen Actividad
 
-        Window window = getWindow();
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue_strong));
+
 
         LinearLayout linearLayout3 = findViewById(R.id.TgraficaActividad);
         view = line.getView(this);
@@ -127,7 +123,7 @@ public class GraficaMetas extends AppCompatActivity implements DefaultCallback2 
 
         agentPulso = new AgentPulso();
 
-        //agentPulso.getDataMonitorDateHome("0",this);
+        agentPulso.getDataMonitorDateHome("0",this);
         agentPulso.getMetas(this);
     }
 

@@ -101,7 +101,6 @@ public class AgentLogin {
                     Response response = okhttp.newCall(request).execute();
 
 
-
                     if (response.code() == 200) {
 
                         JSONObject object = new JSONObject(response.body().string());
@@ -134,9 +133,11 @@ public class AgentLogin {
                         patient.setName_contact(inf_contact.getString("nombre"));
                         patient.setTelephone_contact(inf_contact.getString("telefono"));
                         patient.setRelation(inf_contact.getString("parentesco"));
+                        patient.setToken(object.getString("token"));
 
 
                         LocalDataBase.getInstance(null).saveUser(patient);
+                        Log.i("SUCESS","save-user");
 
                         callback.onFinishProcess(true, null);
                     } else

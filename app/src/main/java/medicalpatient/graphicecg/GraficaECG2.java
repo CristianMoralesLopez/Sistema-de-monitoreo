@@ -9,8 +9,9 @@ import com.cristian.sistemademonitoreo.R;
 import org.achartengine.GraphicalView;
 
 import medicalpatient.Parametros.AgentPulso;
+import medicalpatient.utils.DefaultCallback;
 import medicalpatient.utils.ListDuo;
-import utils.DefaultCallback;
+
 
 public class GraficaECG2 extends AppCompatActivity implements DefaultCallback {
 

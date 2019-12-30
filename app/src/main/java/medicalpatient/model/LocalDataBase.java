@@ -26,7 +26,7 @@ public class LocalDataBase {
     }
 
     private void loadUser() {
-        if (me != null) {
+        if (me == null) {
             Gson gson = new GsonBuilder().create();
             me = gson.fromJson(preferences.getString("user", null), User.class);
         }

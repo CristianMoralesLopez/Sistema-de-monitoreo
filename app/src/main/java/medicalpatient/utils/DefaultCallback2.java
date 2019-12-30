@@ -1,4 +1,4 @@
-package utils;
+package medicalpatient.utils;
 
 public interface DefaultCallback2 {
 

@@ -14,7 +14,8 @@ import android.widget.Toast;
 
 import com.cristian.sistemademonitoreo.R;
 
-import utils.DefaultCallback;
+import medicalpatient.utils.DefaultCallback;
+
 
 public class ListadoPulso extends AppCompatActivity implements DefaultCallback {
 

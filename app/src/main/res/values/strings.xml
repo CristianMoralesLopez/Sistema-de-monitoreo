@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Medical</string>
 
-    <!-- Login -->
+
     <string name="login">Ingresar</string>
     <string name="login_large">Iniciar sesión</string>
     <string name="password">Contraseña</string>
