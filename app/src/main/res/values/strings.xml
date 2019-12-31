@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Medical</string>
+    <string name="app_name">Medical Usuario</string>
 
 
     <string name="login">Ingresar</string>
@@ -50,6 +50,50 @@
     <string name="state">Departamento:</string>
     <string name="city">Ciudad:</string>
 
+
+    <string name="add">Agregar</string>
+    <string name="assign">Asignar</string>
+    <string name="info">Información</string>
+    <string name="name_1">Nombre:</string>
+    <string name="id">Cedula</string>
+    <string name="id_example">1.234.567.890</string>
+    <string name="id_1">Cedula:</string>
+    <string name="profession_1">Profesión:</string>
+    <string name="profession_example">Cardialogo, Deportologo, Nutricionista, etc</string>
+    <string name="birth_date_1">Fecha de nacimiento:</string>
+    <string name="birth_date_example">AAAA/MM/DD</string>
+    <string name="risk_1">Nivel de riesgo:</string>
+    <string name="risk_example">BAJO, MEDIO O ALTO</string>
+    <string name="diagnostic_1">Diagnostico:</string>
+    <string name="diagnostic_example">Descripción sobre el paciente y sus patalogias</string>
+    <string name="age_1">Edad:</string>
+    <string name="age_example">##</string>
+    <string name="height_1">Peso:</string>
+    <string name="weight_example">##</string>
+    <string name="weight_1">Altura:</string>
+    <string name="height_example">##</string>
+    <string name="email_1">Correo Electronico:</string>
+    <string name="email_example">example@mail.com</string>
+    <string name="mobile_number_1">Numero de celular:</string>
+    <string name="mobile_number_example">301-245-6789</string>
+    <string name="city_1">Municipio:</string>
+    <string name="state_1">Departamento:</string>
+    <string name="state_example">Valle Del Cauca</string>
+    <string name="city_example">Cali</string>
+    <string name="password_1">Contraseña:</string>
+    <string name="password_example">**********</string>
+    <string name="confirm_password_1">Confirmar Contraseña:</string>
+    <string name="information_company_1">Datos de la compañia</string>
+    <string name="information_contact_1">Datos del contacto</string>
+    <string name="address_1">Dirección:</string>
+    <string name="address_example">Cra 123 # 45 - 67</string>
+    <string name="telephone_number_1">Numero telefonico:</string>
+    <string name="telephone_number_example">123 45 67</string>
+    <string name="register">Registrar</string>
+    <string name="contact">Contacto</string>
+    <string name="relation_1">Parentesco:</string>
+    <string name="relation_example">Padre, Hijo, Hermano, Amigo, etc.</string>
+
     <string name="marital_state">Estado civil:</string>
     <string name="son">Hijo/a</string>
     <string name="old">Edad:</string>
@@ -60,20 +104,12 @@
     <string name="nameChild">Hijo/a </string>
     <string name="cellphone">Celular:</string>
     <string name="adress">Dirección:</string>
-    <string name="add"><b>Agregar</b></string>
     <string name="remove"><b>Quitar</b></string>
     <string name="save">Guardar</string>
+    <string name="profile">PERFIL</string>
     <string name="alertMessageHome">La Asesoría En Casa inicia desde que la Asesora llega a tu hogar. Una vez culminada la sesión, el sistema te da la posibilidad extenderla una hora más por un valor de $84.000 COP.</string>
-    <string name="alertMessageOnline">La Asesoría en Línea inicia desde que la Asesora se conecta contigo y te da el primer saludo. Una vez culminada la sesión, el sistema te da la posibilidad de extenderla una hora más por un valor de $63.000 COP.</string>
-    <string name="test_result_advisory_home">Tu Asesoría Casa con Paola Cruz ha</string>
-    <string name="test_result_advisory_home1">sido programada exitosamente para</string>
-    <string name="test_date_advisory_home2">El 11 de septiembre, a las 11:00am</string>
-    <string name="sample_string">Si por algún motivo en el futuro deseas
-reprogramar tu Asesoría En Casa, debes
-hacerlo mínimo con 8 horas de
-anticipación, ingresando a MI AGENDA
-Máximo 2 reprogramaciones por Asesoría.
-    </string>
+
+    <string name="profile_patient">Perfil Paciente</string>
 
     <!-- Diary -->
     <string name="diary">AGENDA</string>

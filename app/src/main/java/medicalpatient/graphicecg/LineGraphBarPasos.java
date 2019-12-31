@@ -97,6 +97,12 @@ public class LineGraphBarPasos {
         mCurrentSeries2.add(x,y);
     }
 
+    public void cambiarLimitesGrafica(int x, int y){
+
+        mRender.setYAxisMax(y+y);
+        mRender.setXAxisMax(x);
+    }
+
 
 
 

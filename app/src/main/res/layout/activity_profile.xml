@@ -3,10 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <RelativeLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_vertical_blue"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingVertical="@dimen/size_xxs"
+            android:text="@string/profile_patient"
+            android:textColor="@color/almost_white"
+            android:textSize="@dimen/text_size_xlarge" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,13 +35,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/blue"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingVertical="@dimen/margin_small"
-                android:paddingLeft="@dimen/size_m"
+                android:background="@color/red_strong"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingVertical="@dimen/margin_large"
+                android:paddingStart="@dimen/size_xxs"
                 android:text="@string/personal_information"
-                android:textColor="@color/almost_white"
-                android:textSize="@dimen/text_size_normal" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
+
 
             <ImageView
                 android:id="@+id/image_profile"
@@ -30,132 +50,399 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_default"
-                android:src="@drawable/image_example" />
+                android:src="@drawable/ic_launcher_round" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingLeft="@dimen/size_m"
-                android:text="@string/name"
-                android:textColor="@color/blue_strong"
-                android:textSize="@dimen/text_size_medium" />
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/name_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
 
-            <EditText
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/size_m"
-                android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/rounded_corners"/>
-
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/name"
+                android:maxLines="1"
+                android:nextFocusDown="@id/id"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingLeft="@dimen/size_m"
-                android:text="@string/email"
-                android:textColor="@color/blue_strong"
-                android:textSize="@dimen/text_size_medium" />
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/id_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
 
-            <EditText
-                android:id="@+id/correo"
+            <TextView
+                android:id="@+id/id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/size_m"
-                android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/rounded_corners"/>
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/id_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/birth_date"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingLeft="@dimen/size_m"
-                android:text="@string/state"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/birth_date_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/birth_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="@string/birth_date_example"
+                android:inputType="date"
+                android:maxLines="1"
+                android:nextFocusDown="@id/age"
                 android:textColor="@color/blue_strong"
                 android:textSize="@dimen/text_size_medium" />
 
-            <EditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/age_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/age_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/height"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/height_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/age_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/weight"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/weight_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/age_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/risk"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/risk_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/risk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/risk_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/diagnostic"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/diagnostic_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/diagnostic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/body_huge"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:background="@drawable/rounded_corners"
+                android:ems="200"
+                android:gravity="top"
+                android:hint="@string/diagnostic_example"
+                android:inputType="textCapSentences|textMultiLine"
+                android:nextFocusDown="@id/email"
+                android:padding="@dimen/margin_diminute"
+                android:scrollbars="vertical"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/email_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/email_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/telephone"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/telephone_number_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/telephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/telephone_number_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/mobile_number"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/mobile_number_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/mobile_number_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/state"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/state_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
                 android:id="@+id/state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/size_m"
-                android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/rounded_corners"/>
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/state_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/city"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingLeft="@dimen/size_m"
-                android:text="@string/city"
-                android:textColor="@color/blue_strong"
-                android:textSize="@dimen/text_size_medium" />
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/city_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
 
-            <EditText
+            <TextView
                 android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/size_m"
-                android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/rounded_corners"/>
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/city_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/address"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingLeft="@dimen/size_m"
-                android:text="@string/adress"
-                android:textColor="@color/blue_strong"
-                android:textSize="@dimen/text_size_medium" />
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/address_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
 
-            <EditText
-                android:id="@+id/adress"
+            <TextView
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/size_m"
-                android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/rounded_corners"/>
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/address_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/password"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingLeft="@dimen/size_m"
-                android:text="@string/cellphone"
-                android:textColor="@color/blue_strong"
-                android:textSize="@dimen/text_size_medium" />
-
-            <EditText
-                android:id="@+id/number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/size_m"
-                android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/rounded_corners"/>
-
-            <Button
-                android:id="@+id/save_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginVertical="@dimen/size_l"
-                android:layout_marginBottom="@dimen/margin_default"
-                android:background="@drawable/rounded_circle_blue"
-                android:elevation="15dp"
-                android:fontFamily="@font/montserrat_medium"
-                android:paddingHorizontal="@dimen/body_petit"
-                android:paddingVertical="@dimen/text_size_medium"
-                android:text="@string/save"
-                android:textAllCaps="false"
+                android:background="@color/red_strong"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingVertical="@dimen/margin_large"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/information_contact_1"
                 android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/name_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/name_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/name"
+                android:maxLines="1"
+                android:nextFocusDown="@id/telephone_contact"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/telephone_number_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/telephone_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/telephone_number_example"
+                android:maxLines="1"
+                android:nextFocusDown="@id/relation"
+                android:textColor="@color/blue_strong"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:paddingStart="@dimen/size_xxs"
+                android:text="@string/relation_1"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/relation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_xxs"
+                android:layout_marginTop="@dimen/margin_default"
+                android:backgroundTint="@color/blue_strong"
+                android:hint="@string/relation_example"
+                android:maxLines="1"
+                android:textColor="@color/blue_strong"
+                android:layout_marginBottom="@dimen/margin_xlarge"
                 android:textSize="@dimen/text_size_medium" />
 
         </LinearLayout>

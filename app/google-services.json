@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:812811423805:android:b2c5dffadbc9a4dc3ada54",
         "android_client_info": {
-          "package_name": "com.android.myapplication"
+          "package_name": "medical.app.user"
         }
       },
       "oauth_client": [

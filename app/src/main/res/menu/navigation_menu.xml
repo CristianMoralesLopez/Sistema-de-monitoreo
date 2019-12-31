@@ -5,15 +5,13 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/ecgActivity"
-            android:title="REALIZAR ECG" />
+
         <item
             android:id="@+id/pulso"
             android:title="PULSO" />
         <item
-            android:id="@+id/electocardiograma"
-            android:title="ELECTROCARDIOGRAMA" />
+            android:id="@+id/perfil"
+            android:title="@string/profile" />
         <item
             android:id="@+id/help"
             android:title="AYUDA" />

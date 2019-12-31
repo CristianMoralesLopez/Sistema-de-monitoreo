@@ -93,4 +93,10 @@ public class LinearGraphBarKgCalorias {
         mCurrentSeries2.add(x,y);
     }
 
+    public void cambiarLimitesGrafica(int x, int y){
+
+        mRender.setYAxisMax(2*y);
+        mRender.setXAxisMax(x);
+    }
+
 }

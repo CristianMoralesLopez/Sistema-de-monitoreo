@@ -149,12 +149,16 @@ public class graficaResumenActividadFisica extends AppCompatActivity implements 
 
         }
 
+        line.cambiarLimitesGrafica(valores1.size(),Integer.parseInt(rutina.getPulsoMaximo()));
+
         view.repaint();
 
         for (int i = 0; i< valores2.size();i++){
 
             line1.addCoordenada(i,valores2.get(i));
         }
+
+        line1.cambiarLimitesGrafica(valores2.size(),Integer.parseInt(rutina.getPulsoMaximo1()));
 
         view1.repaint();
 

@@ -34,7 +34,9 @@ import medicalpatient.graphicecg.LinearGraphBarKgCalorias;
 import medicalpatient.help.HelpActivity;
 import medicalpatient.login.AgentLogin;
 import medicalpatient.login.LoginActivity;
+import medicalpatient.model.LocalDataBase;
 import medicalpatient.model.MonitorTake;
+import medicalpatient.profile.ProfileActivity;
 import medicalpatient.utils.DefaultCallback2;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DefaultCallback2 {
@@ -56,8 +58,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private int intPasosFaltantes;
 
     private int intKgcaloriasAsignadas;
-    private int intKgcaloriasLogradas;
-    private int intKgcaloriasFaltantes;
+    private double intKgcaloriasLogradas;
+    private double intKgcaloriasFaltantes;
 
     private static GraphicalView viewPasos;
     private LineGraphBarPasos linePasos;
@@ -113,6 +115,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.nameUserNav);
+
+        navUsername.setText(LocalDataBase.getInstance(null).getUser().getName());
 
 
         title = findViewById(R.id.title);
@@ -206,9 +210,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Home",Toast.LENGTH_LONG);
                 break;
 */
-            case R.id.ecgActivity:
-                Toast.makeText(this, "Electrocardiograma", Toast.LENGTH_LONG);
-                break;
+
 /*
             case R.id.agenda:
                 Toast.makeText(this, "Agenda",Toast.LENGTH_LONG);
@@ -225,10 +227,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 in = new Intent(HomeActivity.this, HelpActivity.class);
                 startActivity(in);
                 break;
-            case R.id.electocardiograma:
-                Toast.makeText(this, "Electrocardiograma", Toast.LENGTH_LONG);
-
-                in = new Intent(HomeActivity.this, ListaElectrocardiograma.class);
+            case R.id.perfil:
+                in = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(in);
                 break;
 
@@ -295,7 +295,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         intPasosAsignadas = Integer.parseInt(datosMetas[0]);
         intPasosLogrados = Integer.parseInt(datosMetas[1]);
         intKgcaloriasAsignadas = Integer.parseInt(datosMetas[2]);
-        intKgcaloriasLogradas = Integer.parseInt(datosMetas[3]);
+         if (datosMetas[3].length()>= 0 && datosMetas[3].length()<= 6) {
+             intKgcaloriasLogradas = Double.parseDouble(datosMetas[3]);
+         }else{
+
+             intKgcaloriasLogradas = Double.parseDouble(datosMetas[3].substring(0,7));
+         }
+
+
         intPasosFaltantes = intPasosAsignadas - intPasosLogrados;
         intKgcaloriasFaltantes = intKgcaloriasAsignadas -intKgcaloriasLogradas;
 
@@ -312,6 +319,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         lineKgCalorias.addCoordenada(1,intKgcaloriasAsignadas);
         lineKgCalorias.addCoordenada2(2, intKgcaloriasLogradas);
+
+        linePasos.cambiarLimitesGrafica(3,intPasosAsignadas);
+        lineKgCalorias.cambiarLimitesGrafica(3,intKgcaloriasAsignadas);
 
         viewPasos.repaint();
         viewKgCalorias.repaint();
@@ -348,12 +358,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
+        line.cambiarLimitesGrafica(valores1.size(),Integer.parseInt(rutina.getPulsoMaximo()));
+
+
         view.repaint();
 
         for (int i = 0; i< valores2.size();i++){
 
             line1.addCoordenada(i,valores2.get(i));
         }
+        line1.cambiarLimitesGrafica(valores2.size(),Integer.parseInt(rutina.getPulsoMaximo1()));
+
 
         view1.repaint();
 
