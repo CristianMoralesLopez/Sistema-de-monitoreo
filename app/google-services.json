@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:812811423805:android:b2c5dffadbc9a4dc3ada54",
+        "android_client_info": {
+          "package_name": "medical.app.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812811423805-pjkshsmmfd8usgk3r1p6lo7960h3t5sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.myapplication",
+            "certificate_hash": "f9703b1119e03df0a41e3fe673630a9a1ee07284"
+          }
+        },
+        {
+          "client_id": "812811423805-0at9tfhj0mqp2dt6iisonocl78kp384q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCygsX-wuYHsqXeGIvWO5fNrrkScFvmlbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812811423805-0at9tfhj0mqp2dt6iisonocl78kp384q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:812811423805:android:5bcb6ac1457ac4f53ada54",
         "android_client_info": {
           "package_name": "com.cristian.sistemademonitoreo"
@@ -15,10 +52,100 @@
       },
       "oauth_client": [
         {
+          "client_id": "812811423805-qfug09rint4jeoqn20tvktjslgd61kup.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cristian.sistemademonitoreo",
+            "certificate_hash": "c3fe119c8961cde05dbb2c5a55f111c4ec65d2f9"
+          }
+        },
+        {
           "client_id": "812811423805-csajunslmld04cdlg94j59ar2h6nl86c.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.cristian.sistemademonitoreo",
+            "certificate_hash": "f9703b1119e03df0a41e3fe673630a9a1ee07284"
+          }
+        },
+        {
+          "client_id": "812811423805-0at9tfhj0mqp2dt6iisonocl78kp384q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCygsX-wuYHsqXeGIvWO5fNrrkScFvmlbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812811423805-0at9tfhj0mqp2dt6iisonocl78kp384q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812811423805:android:12c2dc9e6f7e4c433ada54",
+        "android_client_info": {
+          "package_name": "com.example.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812811423805-gk3i5oh1cp4pt85ms8ahn7tgnnonhkta.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin",
+            "certificate_hash": "0a7be2b2aff7c22f8ad2839ce8864aad7ab0cbd7"
+          }
+        },
+        {
+          "client_id": "812811423805-0at9tfhj0mqp2dt6iisonocl78kp384q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCygsX-wuYHsqXeGIvWO5fNrrkScFvmlbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812811423805-0at9tfhj0mqp2dt6iisonocl78kp384q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812811423805:android:3cb81e2ba3e92bee3ada54",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812811423805-tmi7fabl5pbb7cpsq2hrenibo19q6n75.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "c3fe119c8961cde05dbb2c5a55f111c4ec65d2f9"
+          }
+        },
+        {
+          "client_id": "812811423805-mrt5mgnfv4tj503dbl8r4qohe5ln34c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
             "certificate_hash": "f9703b1119e03df0a41e3fe673630a9a1ee07284"
           }
         },
