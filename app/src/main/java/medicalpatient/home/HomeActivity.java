@@ -312,7 +312,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         lblKgCaloriasasignada.setText(datosMetas[2]);
         lblKgCaloriasLogradas.setText(datosMetas[3]);
-        lblKgcaloriasFaltantes.setText("" + intPasosFaltantes);
+        lblKgcaloriasFaltantes.setText("" + intKgcaloriasFaltantes);
 
         linePasos.addCoordenada(1,intPasosAsignadas);
         linePasos.addCoordenada2(2, intPasosLogrados);
